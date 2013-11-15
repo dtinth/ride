@@ -1,13 +1,12 @@
 {
   "name": "ride",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Monkey-patching/overriding/hooking library",
   "main": "ride.js",
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "mocha": "~1.14.0",
     "chai": "~1.8.1"
