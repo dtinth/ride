@@ -1,0 +1,32 @@
+{
+  "name": "ride",
+  "version": "0.0.0",
+  "description": "Monkey-patching/overriding/hooking library",
+  "main": "ride.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "chai": "~1.8.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dtinth/ride.git"
+  },
+  "keywords": [
+    "monkey",
+    "patch",
+    "override",
+    "ride",
+    "hook",
+    "monkey-patching"
+  ],
+  "author": "Thai Pangsakulyanont <org.yi.dttvb@gmail.com>",
+  "license": "MIT"
+}
