@@ -1,18 +1,27 @@
 {
   "name": "ride",
-  "version": "0.1.0",
+  "version": "0.2.0-0",
   "description": "Monkey-patching/overriding/hooking library",
-  "main": "ride.js",
+  "main": "./lib-commonjs/index.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "~1.14.0",
-    "chai": "~1.8.1"
+    "@rushstack/heft": "0.44.2",
+    "@rushstack/heft-web-rig": "0.7.2",
+    "@types/heft-jest": "1.0.2",
+    "release-it": "15.0.0-esm.3",
+    "prettier": "2.5.1",
+    "@spacet.me/news-fragments": "1.15.2-1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "heft test",
+    "build": "heft build",
+    "prepare": "heft build && ./scripts/generate-api-docs",
+    "release": "release-it",
+    "format": "prettier --write .",
+    "api": "./scripts/generate-api-docs"
   },
   "repository": {
     "type": "git",
@@ -27,5 +36,14 @@
     "monkey-patching"
   ],
   "author": "Thai Pangsakulyanont <org.yi.dttvb@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "lib-commonjs",
+    "dist"
+  ],
+  "module": "./lib/index.js",
+  "types": "./dist/ride.d.ts",
+  "docModel": "./dist/ride.api.json"
 }
