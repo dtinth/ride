@@ -1,1 +1,0 @@
-Ship as ES modules (as well as CommonJS).

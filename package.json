@@ -1,6 +1,6 @@
 {
   "name": "ride",
-  "version": "0.2.0-0",
+  "version": "2.0.0",
   "description": "Monkey-patching/overriding/hooking library",
   "main": "./lib-commonjs/index.js",
   "directories": {
