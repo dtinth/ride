@@ -1,9 +1,8 @@
-
 /**
  * @module ride
  */
 
-var decorators = { }
+var decorators = {}
 var call = Function.prototype.call
 var owns = call.bind(Object.prototype.hasOwnProperty)
 
@@ -38,7 +37,7 @@ function ride(object, methodName, callback) {
 /**
  * Registers a decorator function.
  */
-ride.register = function(plugins) {
+ride.register = function (plugins) {
   for (var name in plugins) {
     if (owns(plugins, name)) {
       ride[name] = decorators[name] = plugins[name]
@@ -49,18 +48,14 @@ ride.register = function(plugins) {
 /**
  * @constructor
  */
-function Riders() {
-}
+function Riders() {}
 
-ride.register(
-  {
-    after:   after,
-    before:  before,
-    compose: compose,
-    wrap:    wrap
-  }
-)
-
+ride.register({
+  after: after,
+  before: before,
+  compose: compose,
+  wrap: wrap,
+})
 
 /**
  * Calls the `extraBehavior` after the `original` function has been called.
@@ -71,8 +66,8 @@ ride.register(
  * ride(test, 'saveResults').after(savePlan)
  */
 function after(extraBehavior) {
-  return function(original) {
-    return function() {
+  return function (original) {
+    return function () {
       var returnValue = original.apply(this, arguments)
       extraBehavior.apply(this, arguments)
       return returnValue
@@ -89,8 +84,8 @@ function after(extraBehavior) {
  * ride(test, 'exit').before(captureScreenshot)
  */
 function before(extraBehavior) {
-  return function(original) {
-    return function() {
+  return function (original) {
+    return function () {
       extraBehavior.apply(this, arguments)
       return original.apply(this, arguments)
     }
@@ -106,8 +101,8 @@ function before(extraBehavior) {
  * ride(test, 'getName').compose(function(name) { return name.toUpperCase() })
  */
 function compose(extraBehavior) {
-  return function(original) {
-    return function() {
+  return function (original) {
+    return function () {
       return extraBehavior.call(this, original.apply(this, arguments))
     }
   }
@@ -126,15 +121,17 @@ function compose(extraBehavior) {
  * })
  */
 function wrap(wrapper) {
-  return function(original) {
-    return function() {
-      var context = this, args = Array.prototype.slice.call(arguments)
-      var wrapped = function() { return original.apply(context, args) }
+  return function (original) {
+    return function () {
+      var context = this,
+        args = Array.prototype.slice.call(arguments)
+      var wrapped = function () {
+        return original.apply(context, args)
+      }
       return wrapper.apply(this, [wrapped].concat(args))
     }
   }
 }
-
 
 function riders(object, methodName) {
   var result = new Riders()
@@ -147,11 +144,10 @@ function riders(object, methodName) {
 }
 
 function rider(object, methodName, decorator) {
-  return function() {
+  return function () {
     ride(object, methodName, decorator.apply(this, arguments))
     return this
   }
 }
 
 module.exports = ride
-

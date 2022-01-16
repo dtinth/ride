@@ -1,6 +1,4 @@
-
-ride
-====
+# ride
 
 Monkey-patch stuff at will!
 
@@ -8,8 +6,7 @@ Monkey-patch stuff at will!
 var ride = require('ride')
 var fs = require('fs')
 
-ride(fs, 'readFile').before(function(filename) {
-    console.log('You are reading ' + filename + ', huh?')
+ride(fs, 'readFile').before(function (filename) {
+  console.log('You are reading ' + filename + ', huh?')
 })
 ```
-
