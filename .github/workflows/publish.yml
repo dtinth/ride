@@ -26,8 +26,19 @@ jobs:
           cache: pnpm
       - name: Install dependencies and build
         run: pnpm install --prefer-offline
+      - name: Get tag for npm publish
+        id: get-tag
+        run: |
+          if [ -f .changeset/pre.json ]; then
+            TAG=$(jq -r '.tag' .changeset/pre.json)
+          else
+            TAG=latest
+          fi
+          echo "$TAG"
+          echo "::set-output name=tag::$TAG"
       - name: Publish to npm
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
           access: public
+          tag: ${{ steps.get-tag.outputs.tag }}
