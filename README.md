@@ -10,3 +10,9 @@ ride(fs, 'readFile').before(function (filename) {
   console.log('You are reading ' + filename + ', huh?')
 })
 ```
+
+## API reference
+
+<https://apiref.page/package/ride>
+
+![API reference screenshot](https://ss.dt.in.th/api/screenshots/apiref-ride.png)
