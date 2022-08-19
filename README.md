@@ -15,4 +15,4 @@ ride(fs, 'readFile').before(function (filename) {
 
 <https://apiref.page/package/ride>
 
-![API reference screenshot](https://ss.dt.in.th/api/screenshots/apiref-ride.png)
+[![API reference screenshot](https://ss.dt.in.th/api/screenshots/apiref-ride.png)](https://apiref.page/package/ride)
