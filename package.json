@@ -8,11 +8,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@rushstack/heft": "0.44.2",
-    "@rushstack/heft-web-rig": "0.8.2",
-    "@types/heft-jest": "1.0.2",
-    "prettier": "2.5.1",
-    "@changesets/cli": "2.20.0"
+    "@rushstack/heft": "0.45.12",
+    "@rushstack/heft-web-rig": "0.10.15",
+    "@types/heft-jest": "1.0.3",
+    "prettier": "2.7.1",
+    "@changesets/cli": "2.25.0"
   },
   "scripts": {
     "test": "heft test",
