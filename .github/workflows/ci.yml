@@ -1,4 +1,4 @@
-# This file is automatically managed by <https://github.com/dtinth/jslibdevkit>.
+# This file is automatically managed by <https://github.com/dtinth/repolicy>.
 # Any manual changes to this file may be overwritten.
 
 name: CI
@@ -19,9 +19,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup pnpm
-        uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2 # v2.0.1
+        uses: pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d # v2.2.2
         with:
-          version: 6.26.0
+          version: 7.13.1
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -46,9 +46,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup pnpm
-        uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2 # v2.0.1
+        uses: pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d # v2.2.2
         with:
-          version: 6.26.0
+          version: 7.13.1
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
