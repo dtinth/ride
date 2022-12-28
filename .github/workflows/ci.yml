@@ -15,20 +15,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Setup pnpm
-        uses: pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d # v2.2.2
-        with:
-          version: 7.13.1
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: pnpm
-      - name: Install dependencies and build
-        run: pnpm install --prefer-offline
+      - name: Setup
+        uses: ./.github/actions/setup
       - name: Test
         run: pnpm run test
       - name: SonarCloud Scan
@@ -42,20 +33,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Setup pnpm
-        uses: pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d # v2.2.2
-        with:
-          version: 7.13.1
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: pnpm
-      - name: Install dependencies and build
-        run: pnpm install --prefer-offline
+      - name: Setup
+        uses: ./.github/actions/setup
       - name: Lint
         run: pnpm run format
       - name: Lint
